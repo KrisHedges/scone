@@ -30,7 +30,7 @@ In the root of your app do:
 
 ### Optionally
 
-Install from source or Scone can be installed in your app as a standalone script.
+Scone can be installed in your app as a standalone script.
 
     git clone git://github.com/InkSpeck/scone.git
     cd scone
@@ -44,6 +44,7 @@ Place scone.js in the root of your app and run it with node.
     node scone.js
 
 ### Optional-Optional
+Install from source
 
 Make it executable
 
