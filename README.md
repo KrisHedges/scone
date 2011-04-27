@@ -13,8 +13,8 @@ Scone
 
  In order to accomplish all these amazing feats Scone expects a basic few conventions (still very much subject to change, so... for now) to be followed.
 
-    - Your .coffee files are to stored in a ./coffee directory in the root of your app, and the resulting .js files are output to the root of your app ./.
-    - Your .styl files are kept in a /views/stylus directory and compiled to /public/css.
+    * Your .coffee files are to stored in a ./coffee directory in the root of your app, and the resulting .js files are output to the root of your app ./.
+    * Your .styl files are kept in a /views/stylus directory and compiled to /public/css.
 
 Install:
 ===
