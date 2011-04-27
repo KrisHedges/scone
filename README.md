@@ -6,6 +6,8 @@ monitor much like nodemon, but by using conventions over optional configuration,
 and it provides a merged view of the Node webserver console, the coffee watch console, and the stylus watch console. 
 Giving the dev one terminal to rule them all.
 
+## Details
+
 When you make a change to either .coffee files or .styl files they will be compiled and output immediately.
 Scone then watches the .js files in your node app for these changes and will restart the web server when they happen.
 Stylus compiles .css files to /public/css these compiles WILL not cause the web-server to restart, but you will see the "compiled output" in the console.
