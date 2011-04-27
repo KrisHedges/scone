@@ -19,26 +19,25 @@ In order to accomplish all these amazing feats Scone expects a basic few convent
 
 ## Install:
 
-   npm install scone
+    npm install scone
+
+## Usage:
+
+In the root of your app do:
+ 
+    scone 
 
 ### Optionally
    
 Scone can be installed in your app as a standalone script.
 Compile scone.js
    
-   coffee -c scone.coffee
+    coffee -c scone.coffee
    
 Place scone.js in the root of your app and run it with node.
 
-   node scone.js   
+    node scone.js   
 
-
-## Usage:
-
-In the root of your app do:
- 
-   scone 
- 
 ## Requirements:
 
 * node & npm, of course.
