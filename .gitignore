@@ -1,3 +1,5 @@
 scone.js
 scone
 .DS_Store
+.npmignore
+package.json
