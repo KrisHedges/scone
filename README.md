@@ -1,33 +1,40 @@
-Evented I/O for V8 javascript.
+Scone
+===
+ Scone (Stylus, CoffeScript On node.js) makes developing node.js apps 
+ that use coffeescript and stylus easier. Scone is a development server 
+ monitor much like nodemon, but lighter, simpler, and providing a merged view of
+ the Node webserver console, the coffee watch console, and the stylus watch console. 
+ Giving the dev one terminal to rule them all.
+
+ When you make a change to either .coffee files or .styl files they will be compiled and output immediately.
+ Scone then watches the .js files in your node app for these changes and will restart the web server when they happen.
+ Stylus compiles .css files to /public/css these compiles WILL not cause the web-server to restart, but you will see the "compiled output" in the console.
+ It's only css so... just refresh the page.
+
+ In order to accomplish all these amazing feats Scone expects a basic few conventions (still very much subject to change, so... for now) to be followed.
+
+    - Your .coffee files are to stored in a ./coffee directory in the root of your app, and the resulting .js files are output to the root of your app ./.
+    - Your .styl files are kept in a /views/stylus directory and compiled to /public/css.
+
+Install:
 ===
 
-To build:
+        npm install scone
 
-    ./configure
-    make
-    make install
+Usage:
+===
+In the root of your app do:
+ 
+       scone 
+ 
+Requirements:
+===
 
-To run the tests:
+node & npm, of course.
+coffee-script
+stylus
 
-    make test
-
-To build the documentation:
-
-    make doc
-
-To read the documentation:
-
-    man doc/node.1
-
-Resources for Newcomers
----
-  - [The Wiki](http://github.com/ry/node/wiki)
-  - [nodejs.org](http://nodejs.org/)
-  - [how to install node.js and npm (node package manager)](http://joyeur.com/2010/12/10/installing-node-and-npm/)
-  - [list of modules](http://github.com/ry/node/wiki/modules)
-  - [list of companies and projects using node](http://github.com/ry/node/wiki)
-  - [node.js mailing list](http://groups.google.com/group/nodejs)
-  - irc chatroom, [#node.js on freenode.net](http://webchat.freenode.net?channels=node.js&uio=d4)
-  - [community](https://github.com/ry/node/wiki/Community)
-  - [contributing](https://github.com/ry/node/wiki/Contributing)
-  - [big list of all the helpful wiki pages](https://github.com/ry/node/wiki/_pages)
+License:
+===
+ Licensed under the terms of MIT License. For the full copyright and license
+ information, please see the LICENSE file in the root folder.
