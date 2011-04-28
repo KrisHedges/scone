@@ -1,0 +1,29 @@
+{
+  "name": "scone",
+  "description": "'Scone.js' makes developing node.js apps that use coffeescript and stylus easier by merging the coffee -w and stylus -w commands along side the server console. One terminal to rule them all.",
+  "keywords": [
+    "scone", 
+    "scone.js"
+  ],
+  "version": "0.1.4",
+  "author": "Kris Hedges - Inkspeck Design <kris@inkspeck.com> (http://inkspeck.com/)",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/InkSpeck/scone.git",
+    "web": "http://github.com/InkSpeck/scone"
+  },
+  "bin": {
+    "scone": "/bin/scone"
+  },
+  "main": "scone",
+  "dependencies": {
+    "coffee-script": ">=1.0.1 < 1.1.0 ",
+    "stylus": ">= 0.11.10 < 0.12.0"
+  }
+}
