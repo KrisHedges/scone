@@ -9,15 +9,19 @@ Giving the dev one console to rule them all.
 
 ## Details
 
-When you make a change to either .coffee files or .styl files they will be compiled and output immediately.
-Scone then watches the .js files in your node app for these changes and will restart the web server when they happen.
-Stylus compiles .css files to /public/css these compiles WILL NOT cause the web-server to restart, but you will see the "compiled output" in the console.
-It's only css so... just refresh the page.
+When you make a change to either .coffee files or .styl files they 
+will be compiled and output immediately. Scone then watches the .js 
+files in your node app for these changes and will restart the web 
+server when they happen. Stylus compiles .css files to /public/css 
+these compiles WILL NOT cause the web-server to restart, but you will 
+see a "compiled path/to/file" message in the console.
+It's only css so... you just need to refresh the page, and maybe clear your cache.
 
 In order to accomplish all these amazing feats Scone expects a few conventions to be followed.
 (These conventions are still very much, subject to change, so... for now...)
 
-* Your .coffee files are to stored in a ./coffee directory in the root of your app, and the resulting .js files are output to the root of your app ./.
+* Your .coffee files are to stored in a ./coffee directory in the root of your app, 
+  and the resulting .js files are output to the root of your app ./.
 * Your .styl files are kept in a /views/stylus directory and compiled to /public/css.
 * Your main application file is called app.js
 
