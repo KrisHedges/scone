@@ -18,7 +18,7 @@ scone =
     this.captureOutput appcoffee
 
   "viewcoffeewatch": ->
-    viewcoffee = child_process.exec "coffee -o #{process.cwd()}/public -w -l -c #{process.cwd()}/src/public/**"
+    viewcoffee = child_process.exec "coffee -o #{process.cwd()}/public/js -w -l -c #{process.cwd()}/src/public/js/*.coffee"
     console.log "Making View Coffee"
     this.captureOutput viewcoffee
 
