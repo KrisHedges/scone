@@ -6,20 +6,31 @@ scone =
   files: []
   restarting: false
 
-  "coffeewatch": ->
-    coffee = child_process.exec 'coffee -o '+process.cwd()+' -w -l -c '+process.cwd()+'/coffee/*.coffee'
-    console.log "Making Coffee"
-    coffee.stdout.addListener 'data', (data) ->
-      process.stdout.write data, encoding='utf8'
-    coffee.stderr.addListener 'data', (data) ->
-      process.stdout.write data, encoding='utf8'
+  "makedir": (dir)->
+    try
+      fs.statSync dir
+    catch error
+      fs.mkdirSync dir, '0755'
+
+  "appcoffeewatch": ->
+    appcoffee = child_process.exec "coffee -o #{process.cwd()}/app -w -l -c #{process.cwd()}/src/app/**"
+    console.log "Making App Coffee"
+    this.captureOutput appcoffee
+
+  "viewcoffeewatch": ->
+    viewcoffee = child_process.exec "coffee -o #{process.cwd()}/public -w -l -c #{process.cwd()}/src/public/**"
+    console.log "Making View Coffee"
+    this.captureOutput viewcoffee
 
   "styluswatch": ->
-    stylus = child_process.exec 'stylus -o '+process.cwd()+'/public/css -w -c '+process.cwd()+'/views/stylus'
+    stylus = child_process.exec "stylus -o #{process.cwd()}/public/css -w -c #{process.cwd()}/src/public/css"
     console.log "With Styl"
-    stylus.stdout.addListener 'data', (data) ->
+    this.captureOutput stylus
+
+  captureOutput: (proc)->
+    proc.stdout.addListener 'data', (data) ->
       process.stdout.write data, encoding='utf8'
-    stylus.stderr.addListener 'data', (data) ->
+    proc.stderr.addListener 'data', (data) ->
       process.stdout.write data, encoding='utf8'
 
   "restart": ->
@@ -31,7 +42,7 @@ scone =
     self = this
     console.log 'Starting Node App'
     self.watchFiles()
-    this.process = child_process.spawn(process.ARGV[0], ['app.js'])
+    this.process = child_process.spawn(process.ARGV[0], ['app/app.js'])
 
     this.process.stdout.addListener 'data', (data) ->
       process.stdout.write data
@@ -63,10 +74,13 @@ scone =
     this.files = []
 
 startitup = ->
-  scone.coffeewatch()
-  setTimeout ->
-    scone.styluswatch()
-  ,1000
+  scone.makedir "app"
+  scone.makedir "public"
+  scone.makedir "public/js"
+  scone.makedir "public/css"
+  scone.appcoffeewatch()
+  scone.viewcoffeewatch()
+  scone.styluswatch()
   setTimeout ->
     scone.start()
   ,2000
