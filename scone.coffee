@@ -59,7 +59,7 @@ scone =
 
   "watchFiles": ->
     self = this
-    child_process.exec 'find . | grep "\.js$"', (error, stdout, stderr) ->
+    child_process.exec 'find app/. | grep "\.js$"', (error, stdout, stderr) ->
       files = stdout.trim().split("\n")
       files.forEach (file) ->
         self.files.push(file)
